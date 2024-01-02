@@ -1,0 +1,58 @@
+{
+  "name": "tabby-blazing",
+  "description": "Tabby blazing fast commands plugin",
+  "module": "index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "type": "commonjs",
+  "license": "MIT",
+  "version": "0.0.1",
+  "repository": {
+    "url": "git+https://github.com/moemoechu/tabby-blazing.git"
+  },
+  "author": {
+    "name": "moemoechu"
+  },
+  "keywords": [
+    "tabby-plugin"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && webpack --progress --color",
+    "watch": "webpack --progress --color --watch",
+    "deploy": "bun run build && rm -rf /mnt/hgfs/Tabby/data/plugins/node_modules/tabby-blazing-commands && mkdir /mnt/hgfs/Tabby/data/plugins/node_modules/tabby-blazing-commands && cp -r ./dist package.json /mnt/hgfs/Tabby/data/plugins/node_modules/tabby-blazing-commands/",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@angular/animations": "^15",
+    "@angular/cdk": "^15",
+    "@angular/common": "^15",
+    "@angular/core": "^15",
+    "@angular/forms": "^15",
+    "@angular/platform-browser": "^15",
+    "@ng-bootstrap/ng-bootstrap": "^14",
+    "@types/uuid": "^9.0.7",
+    "@types/webpack-env": "^1",
+    "apply-loader": "^2",
+    "css-loader": "^6",
+    "ngx-toastr": "^16",
+    "node-sass": "^9",
+    "pug": "^3",
+    "pug-loader": "^2",
+    "sass-loader": "^13",
+    "style-loader": "^3",
+    "svg-inline-loader": "^0.8.2",
+    "tabby-core": "latest",
+    "tabby-electron": "latest",
+    "tabby-settings": "latest",
+    "tabby-terminal": "latest",
+    "ts-loader": "^9",
+    "typescript": "^5",
+    "utils-decorators": "^2",
+    "uuid": "^9.0.1",
+    "webpack": "^5",
+    "webpack-cli": "^5"
+  }
+}
